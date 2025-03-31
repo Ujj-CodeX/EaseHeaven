@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin</title>
+   <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: purple;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:whitesmoke; font-weight: bold;">
+      <img src="{{url_for('static',filename='10.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      EaseHaven  </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        </div>
+        <a href="/" class="btn btn-light ml-auto mx-3">Home</a>
+         <a href="/login" class="btn btn-light ml-auto">Main Login Page</a>
+  </div>
+</nav>
+
+</head>
+<body>
+<div class="card-container">
+  <div class="card mb-3" style="width: 20rem;">
+    <div class="card-body">
+      <h5 class="card-title">EaseHeaven</h5>
+      <p class="card-text">Admin Login</p>
+
+      <form action="{{ url_for('login_pg1') }}" method="post">
+        <div class="row g-3 align-items-center mb-3">
+          <div class="col-auto">
+            <label for="inputUsername" class="col-form-label">Username</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputUsername" name="Username" class="form-control" required>
+          </div>
+        </div>
+        <div class="row g-3 align-items-center mb-3">
+          <div class="col-auto">
+            <label for="inputPassword" class="col-form-label">Password</label>
+          </div>
+          <div class="col-auto">
+            <input type="password" id="inputPassword" name="Password" class="form-control" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top:20px;">Log In</button>
+      </form>
+
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <div class="alert alert-danger mt-3">
+                  {{ messages[0] }}
+              </div>
+          {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<style>
+  
+  .card-container {display: flex;justify-content: center; align-items: center; height: 100vh; }
+
+  
+  .card-body {text-align: center;}
+</style>
+
+
+</body>
+</html>

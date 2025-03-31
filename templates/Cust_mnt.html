@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin's</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar" style="background-color: purple;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="font-weight: bold; color: white;">
+        <img src="{{ url_for('static', filename='10.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        EaseHeaven : Customer's Management
+      </a>
+      
+      <a href="/admin_ds" class="btn btn-light ml-auto">Dashboard</a>
+    </div>
+  </nav>
+
+
+
+<div class="container mt-5">
+  <h2>Customer Management</h2>
+  
+  <form method="POST" action="/cust_mnt">
+  <div class="form-group" style="width:200px">
+    <label for="userId">Enter Customer ID</label>
+    <input type="text" name="username" class="form-control" id="userId" placeholder="Enter Customer ID">
+  </div>
+  <button class="btn btn-primary" name="Get_details" >Get Details</button>
+  <button class="btn btn-danger" name="block_customer" >Block Customer</button>
+  <button class="btn btn-danger" name="unblock_customer" >Unblock Customer</button>
+  </form>
+   <div id="customerDetails" class="mt-3">
+      {% if customer_details %}
+        <strong>Customer Details:</strong><br>
+        Name: {{ customer_details[0] }}<br>
+        Email: {{ customer_details[1] }}<br>
+        Pincode: {{ customer_details[2] }}<br>
+        Phone: {{ customer_details[3] }}<br>
+        status: {{ customer_details[4] }}<br>
+        Address: {{ customer_details[5] }}<br>
+        Gender: {{ customer_details[6] }}
+
+      {% endif %}
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <h3>User List</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Pincode</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user[0] }}</td>
+          <td>{{ user[1] }}</td>
+          <td>{{ user[2] }}</td>
+          <td>{{ user[3] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+<div class="container mt-5">
+    <h3>Review's</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Review</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in table %}
+        <tr>
+          <td>{{ user[0] }}</td>
+          <td>{{ user[1] }}</td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+</body>
+</html>

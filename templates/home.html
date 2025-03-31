@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    	<title>EaseHeaven</title>
+      <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+    	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="background-color: purple;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:whitesmoke; font-weight: bold;">
+      <img src="{{url_for('static',filename='10.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      EaseHeaven  </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" style="color:whitesmoke;" href="/About">About Us</a>
+        </li>
+        </div>
+  </div>
+</nav>
+
+</head>
+<body>
+	<div style="display: flex; align-items: flex-start; margin: 20px;">
+  
+  <img src="{{url_for('static',filename='1.png')}}" class="rounded" style="width: 40%; height: auto; margin-right: 20px; margin-top: 20px;">
+
+  <!-- Card -->
+  <div class="card" style="width: 50rem; margin-left: 3%; margin-top: 5%;">
+    <div class="card-body">
+      <h5 class="card-title" style="font-size:50px;">What are you Looking For ??</h5>
+      <p class="card-text" style="font-size:20px;">Our Services</p>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-utensils"></i> Cooking</a>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2 "><i class="fas fa-tools"></i> AC Servicing</a>
+      
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-seedling"></i> Gardening</a><br>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-broom"></i> Cleaning</a>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-wrench"></i> Plumbing</a>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-bolt"></i> Electrical</a><br>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-bug"></i> Pest Control</a>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-hammer"></i> Repair</a>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-home"></i> Household Management</a><br>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-shield-alt"></i> Security and Safety</a>
+      <a class="btn btn-outline-secondary btn-gap mx-2 my-2"><i class="fas fa-baby"></i> Baby Sitting</a>
+    </div>
+</div>
+  
+</div>
+<p  style="font-size:20px;margin-left: 68%;font-weight: bold; ">Join Us !</p>
+<a href="/login" class="btn btn-primary" style="margin-left: 55%;width:30rem;">Login or Register</a>
+
+    
+
+
+<div>
+<p style="font-weight: bold; float: left; font-size: 50px; margin-top: 80px; margin-left: 50px;">Most Booked Services</p>
+<br clear="all">
+</div>
+
+
+<div class="image-container">
+  <div class="image-item">
+    <img src="{{url_for('static',filename='6.jpeg')}}" alt="Image 1" class="image">
+    <p class="image-text" style="font-weight: bold;">Cleaning Service</p>
+   
+  </div>
+  <div class="image-item">
+    <img src="{{url_for('static',filename='7.jpg')}}" alt="Image 2" class="image">
+    <p class="image-text" style="font-weight: bold;">Cooking Service</p>
+    
+  </div>
+  <div class="image-item">
+    <img src="{{url_for('static',filename='8.jpg')}}" alt="Image 3" class="image">
+    <p class="image-text" style="font-weight: bold;">AC Repairing</p>
+    
+  </div>
+  <div class="image-item">
+    <img src="{{url_for('static',filename='9.jpg')}}" alt="Image 3" class="image">
+    <p class="image-text" style="font-weight: bold;">Security and Safety</p>
+    
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; margin: 20px;">
+  
+  <img src="{{url_for('static',filename='11.png')}}" class="rounded" style="width: 90%; height: 40%; margin-left: 40px; margin-top: 40px;">
+</div>
+<style>
+  .image-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 80px; 
+  .image-item {
+    text-align: center; 
+  }
+
+  .image {
+    width: 250px;
+    height: auto; 
+  }
+
+  .image-text {
+    font-size: 16px; 
+    margin-top: 10px; 
+  }
+
+</style>
+
+<p style="font-weight: bold; float: left; font-size: 50px; margin-top: 80px; margin-left: 50px;">Why Choose Us?</p>
+<br clear="all">
+
+<div>
+    <p style="font-size: 20px; margin-left: 50px; line-height: 1.6;">
+        Choose us for all your household service needs, where quality and reliability meet convenience. 
+        Whether it’s regular cleaning, deep cleaning, or maintaining your home’s appliances and systems, 
+        our expert team is here to help. We understand the importance of a clean, well-maintained home, 
+        and that’s why we offer a wide range of services, from plumbing and electrical repairs to lawn care 
+        and pest control. Our professionals are experienced, punctual, and dedicated to ensuring your home 
+        remains comfortable, safe, and beautiful. We use the latest tools and techniques to deliver exceptional 
+        results every time. With flexible scheduling, affordable pricing, and a customer-first approach, we take 
+        the stress out of home management so you can focus on what matters most. Trust us to handle your household 
+        chores with the utmost care and attention, delivering peace of mind and the best service every step of the way.
+    </p>
+</div>
+
+<!-- Footer Section -->
+<footer class="simple-footer" style="margin-top: 120px;">
+  <p>&copy; 2024 EaseHeaven. All rights reserved.</p>
+  <p>Contact us: <a href="mailto:support@yourcompany.com">support@EaseHeaven.com</a> | +123 456 7890</p>
+</footer>
+
+<style>
+  .simple-footer {
+    background-color: #333; 
+    color: #fff; 
+    text-align: center; 
+    padding: 20px; 
+    font-size: 14px;
+  }
+  
+  .simple-footer a {
+    color: #fff; 
+    text-decoration: none; 
+  }
+  
+  .simple-footer a:hover {
+    text-decoration: underline; 
+  }
+</style>
+</body>
+</html>

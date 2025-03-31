@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Register</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <nav class="navbar" style="background-color: purple;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="font-weight: bold; color: white;">
+        <img src="{{ url_for('static', filename='10.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        EaseHeaven
+      </a>
+      <a href="/" class="btn btn-light ml-auto mx-3">Home</a>
+       <a href="/login" class="btn btn-light ">Main Login Page</a>
+    </div>
+  </nav>
+
+</head>
+	
+<div class="card-container">
+  <div class="card mb-3" style="width: 40rem; margin-top: 400px;">
+    <div class="card-body">
+      <h5 class="card-title">EaseHeaven</h5>
+      <p class="card-text"> Register as Customer</p>
+      <form action="{{ url_for('Reg_pg2') }}" method="post">
+       <div class="row g-3 align-items-center">
+       <div class="col-auto">
+       <label for="inputUsername" class="col-form-label">Username</label>
+       </div>
+       <div class="col-auto">
+       <input type="text" id="inputUsername" name="username" class="form-control" aria-label="Username">
+       </div>
+       </div>
+       <div class="row g-3 align-items-center">
+       <div class="col-auto">
+      <label for="inputPassword" class="col-form-label" style="margin-top:20px;">Password</label>
+       </div>
+       <div class="col-auto">
+       <input type="password" id="inputPassword" name="password" class="form-control" aria-label="Password">
+       </div>
+       </div>
+       <div class="row g-3 align-items-center">
+       <div class="col-auto">
+       <label for="inputUsername" class="col-form-label" style="margin-top:20px;">Full Name</label>
+       </div>
+       <div class="col-auto">
+       <input type="text" id="inputUsername" name="name" class="form-control" aria-label="Username">
+       </div>
+       </div>
+       <div class="row g-3 align-items-center" style="margin-top:20px;">
+    <div class="col-auto">
+      <label for="serviceType" class="col-form-label">Gender</label>
+    </div>
+    <div class="col-auto">
+      <select id="serviceType" name="gender" class="form-control" >
+        <option value="Choose Your Gender">Choose your Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+
+
+       <div class="row g-3 align-items-center">
+       <div class="col-auto">
+       <label for="inputUsername" class="col-form-" style="margin-top:20px;">Address</label>
+       </div>
+       <div class="col-auto">
+       <input type="text" id="inputUsername" name="address" class="form-control" aria-label="Address">
+       </div>
+       </div>
+       <div class="row g-3 align-items-center">
+       <div class="col-auto">
+       <label for="inputUsername" class="col-form-label" style="margin-top:20px;">Pincode</label>
+       </div>
+       <div class="col-auto">
+       <input type="number" id="inputUsername" name="pincode" class="form-control" aria-label="Pincode">
+       </div>
+       </div>
+       <div class="row g-3 align-items-center">
+       <div class="col-auto">
+       <label for="inputUsername" class="col-form-label" style="margin-top:20px;">Contact Number</label>
+       </div>
+       <div class="col-auto">
+       <input type="number" id="inputUsername" name="phone" class="form-control" aria-label="Contact">
+       </div>
+       </div>
+       <div class="row g-3 align-items-center" style="margin-top:20px;">
+       <div class="col-auto">
+       <label for="inputUsername" class="col-form-label">Email</label>
+       </div>
+       <div class="col-auto">
+       <input type="text" id="inputUsername" name="email" class="form-control" aria-label="Email">
+       </div>
+       </div>
+       <button type="submit" class="btn btn-primary" style="margin-top:20px;">Register</button>
+  </form>
+       
+       <p class="card-text" style="margin-top:20px;">OR</p>     
+       <a href="/login_pg" class="btn btn-primary" style="margin-top:20px;">Already have ID ? Login Here</a>   
+
+</div>
+
+<style>
+  
+  .card-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+  }
+
+  
+  .card-body {
+    text-align: center;
+  }
+</style>
+
+
+</body>
+</html>

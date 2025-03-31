@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>User's</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary " style="background-color: purple;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="font-weight: bold; color: white;">
+        <img src="{{url_for('static',filename='10.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        EaseHeaven : User's Dashboard
+      </a>
+      <a href="\login" class="btn btn-light ml-auto">Logout</a>
+    </div>
+  </nav>
+  
+  
+
+   <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    
+    <div style="flex: 2; margin-right: 20px; margin-left: 5%;"> 
+  <p class="right-text" style="font-weight: bold;
+    float: left; font-size: 30px; margin-top: 80px; margin-left: 13%;">What are You Looking for?</p>
+    
+<p class="right-text" style=";
+    float: left; font-size: 20px; margin-top: 10px; margin-left: 13%; clear: left;">Select the Services Based on Your Area</p>
+
+
+{% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p class="alert {{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    
+    <div>
+    <form method="POST" action="{{ url_for('cust_ds') }}"style="margin-top:15%;margin-right: 50%;margin-left: 13%;">
+        <label for="pincode">Pin Code:</label>
+        <input type="text" id="pincode" name="pin" required placeholder="Enter Pin Code">
+        <button class="btn btn-primary"  type="submit" name="fetch">Fetch Services</button>
+    </form>
+    </div>
+    
+    
+    <div>
+
+    
+    <form method="POST" action="{{ url_for('cust_ds') }}" style="margin-top:1%;margin-right: 8%;margin-left: 13%;">
+        <label for="service-type" >Service Type:</label>
+        <select id="service-type" name="service" required>
+            <option value="">Select a service</option>
+            {% for service in services %}
+                <option value="{{ service }}">{{ service }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <!-- Days and Booking -->
+        <label for="days">Duration (in days):</label>
+        <input type="number" id="days" name="days" min="1" value="1" required>
+        <div>
+        <label for="date1">Date_of_Request:</label>
+        <input  id="pinco" name="date1" required placeholder="(DD/MM/YY)">
+        </div>
+        <div>
+        <label for="date2">Date_of_Ending:</label>
+        <input  id="pincod" name="date2" required placeholder="(DD/MM/YY)">
+        </div>
+
+        
+        <button class="btn btn-success"   type="submit" name="book">Book Now</button>
+        
+    </form>
+
+
+    <form method="POST" action="{{ url_for('cust_ds') }}" style="margin-top:1%;margin-right: 8%;margin-left: 13%;">
+        <div class="card mb-3" style="max-width: 50%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{url_for('static',filename='10.png')}}" class="img-fluid rounded-start" alt="EaseHeaven" style="height:150rm;">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+
+        <h5 class="card-title" style="font-weight:bold;">EaseHeaven  </h5>
+        <h5 class="card-title">SECURE PAYMENT</h5>
+        <form action="{{ url_for('cust_ds') }}" method="post">
+        <div class="row g-3 align-items-center mb-3">
+          <div class="col-auto">
+            <label for="inputUsername" class="col-form-label">Service ID</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputUsername" name="serid" class="form-control" required>
+          </div>
+        </div>
+        <div class="col-auto">
+      <label for="serviceType" class="col-form-label">Payment Method </label>
+    
+        <div class="row g-3 align-items-center mb-3">
+          <select id="serviceType" name="gender" class="form-control" >
+        <option value="Choose Your Gender">Choose your Method</option>
+        <option value="Male">CREDIT CARD</option>
+        <option value="Female">BHIM-UPI</option>
+        <option value="Other">DEBIT CARD</option>
+        <option value="Other">Other mode</option>
+      </select>
+          
+        </div>
+        </div>
+        <p>OR</p>
+          <p>SCAN QR CODE</p>
+          <img src="{{url_for('static',filename='13.png')}}" class="img-fluid rounded-start" alt="EaseHeaven" style="height:50rm;">
+
+        <button type="submit" name="pay" class="btn btn-success" style="margin-top:20px;">PAY SECURELY</button>
+      </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </form>
+
+
+
+    </div>
+</div>
+     <div style="flex: 1; text-align: center;">
+        <img src="{{url_for('static',filename='12.png')}}" alt="Related Services" style=" margin-right: 50%; max-width: 100% ; border-radius: 8px;">
+    </div>
+</div>
+
+    
+
+    <div class="container mt-5">
+  <h2>Edit Your Requests</h2>
+  
+  
+    <div>
+    <form method="POST" action="{{ url_for('cust_ds') }}"style="margin-top:3%;margin-right: 50%;">
+        <label for="pincode">Pin Code:</label>
+        <input type="text" id="pincode" name="pincode" required placeholder="Enter Pin Code">
+        <button class="btn btn-primary"  type="submit" name="fetch_service">Fetch Services</button>
+
+    </form>
+    </div>
+
+    <form method="POST" action="{{ url_for('cust_ds') }}" style="margin-top:1%;margin-right: 8%;">
+
+    <div class="form-group">
+        <label for="service-type">Service Type:</label>
+        <select id="service-type" name="ser" required>
+            <option value="">Select a service</option>
+            {% for service in sr %}
+                <option value="{{ service }}">{{ service }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+
+  <div class="form-group" style="width:150px; margin-right: 20px;">
+    <label for="userId">Enter Service ID</label>
+    <input type="text" name="srid" class="form-control" id="userId" placeholder="Service ID">
+    <label for="userId">Duration</label>
+    <input type="text" name="days1" class="form-control" id="userId" placeholder="Duration">
+    <label for="userId">Date_of_Request</label>
+    <input type="text" name="date11" class="form-control" id="userId" placeholder="(DD/MM/YY)">
+    <label for="userId">Date_of_Completion</label>
+    <input type="text" name="date12" class="form-control" id="userId" placeholder="(DD/MM/YY)">
+    
+   </div>
+   <button class="btn btn-primary" type="submit" name="update" >Update</button>
+ 
+  
+  </form>
+
+
+   
+</div>
+
+    <div>
+    <form method="POST" action="{{ url_for('cust_ds') }}"style="margin-top:10%;margin-right: 50%;margin-left: %;">
+
+    <h2>Edit Your Status of Request</h2>    
+        
+    <div class="form-group" style="width:150px; margin-right: 20px;">
+    <label for="userId">Enter Service ID</label>
+    <input type="text" name="srid" class="form-control" id="userId" placeholder="Service ID">
+    <button class="btn btn-primary"  type="submit" name="close" style="margin-top:20px;">Close</button>
+    <button class="btn btn-primary"  type="submit" name="open" style="margin-top:20px;">Open</button>
+    </div>
+    </form>
+</div>
+
+
+
+
+<style>
+        
+        .review-section {
+            position: fixed-top;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .review-section h2 {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .review-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .review-section textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+            resize: none;
+        }
+        .review-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .review-section button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<form method="POST" action="{{ url_for('cust_ds') }}">
+<div class="review-section" style="width:500px;margin-top: 150px;margin-right: 100px;">
+    <h2>Like Us?? Write your Experience</h2>
+    <label for="reviewTextarea">Write a Review:</label>
+    <textarea  name="review" placeholder="Share your experience."></textarea>
+    <button name="submit">Submit Review</button>
+</div>
+</form>
+<div class="container mt-5" >
+    <h3>Service Request List</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Service</th>
+          <th>Duration</th>
+          <th>Request Date</th>
+          <th>Payment Status</th>
+          <th>Completion Date</th>
+          <th>Service ID</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user[0] }}</td>
+          <td>{{ user[1] }}</td>
+          <td>{{ user[2] }}</td>
+          <td>{{ user[3] }}</td>
+          <td>{{ user[4] }}</td>
+          <td>{{ user[5] }}</td>
+          <td>{{ user[6] }}</td>
+          <td>{{ user[7] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="container mt-5" >
+    <h3>On-Going Request</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Service</th>
+          <th>Duration</th>
+          <th>Request Date</th>
+          <th>Payment Status</th>
+          <th>Completion Date</th>
+          <th>Service ID</th>
+          <th>Status</th>
+          <th>Professional</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in table %}
+        <tr>
+          <td>{{ user[0] }}</td>
+          <td>{{ user[1] }}</td>
+          <td>{{ user[2] }}</td>
+          <td>{{ user[3] }}</td>
+          <td>{{ user[4] }}</td>
+          <td>{{ user[5] }}</td>
+          <td>{{ user[6] }}</td>
+          <td>{{ user[7] }}</td>
+          <td>{{ user[8] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  
+  
+
+
+
+<footer class="simple-footer" style="margin-top: 120px;">
+  <p>&copy; 2024 EaseHeaven. All rights reserved.</p>
+  <p>Contact us: <a href="">support@Householdservices.com</a> | +123 456 7890</p>
+</footer>
+
+<style>
+  .simple-footer {background-color: #333; color: #fff; text-align: center; padding: 20px; font-size: 14px; }
+  
+  .simple-footer a {color: #fff; text-decoration: none;}
+  
+  .simple-footer a:hover { text-decoration: underline; }
+</style>
+
+
+
+
+</body>
+</html>

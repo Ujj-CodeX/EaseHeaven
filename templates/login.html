@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>EaseHeaven</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: purple;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:whitesmoke; font-weight: bold;">
+      <img src="{{url_for('static',filename='10.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      EaseHeaven  </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        </div>
+        <a href="/" class="btn btn-light ml-auto">Home</a>
+  </div>
+</nav>
+
+	
+<div class="card-container">
+  <div class="card mb-3" style="width: 20rem;">
+    <div class="card-body">
+      <h5 class="card-title">EaseHeaven</h5>
+      <p class="card-text">Login or Register</p>
+      <a href="/login_pg" class="btn btn-primary">Login as Existing User</a>
+      <a href="/login_pg1" class="btn btn-primary" style="margin-top:20px;">Login as Admin</a>
+      <a href="/login_pg2" class="btn btn-primary" style="margin-top:20px;">Login/Reg as Service Professional</a>
+      <a href="/Reg_pg2" class="btn btn-primary" style="margin-top:20px;">New user? Register Now</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  
+  .card-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+  }
+
+  
+  .card-body {
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

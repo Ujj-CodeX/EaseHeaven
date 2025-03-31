@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin's Page</title>
+   <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+</head>
+<body>
+
+  <nav class="navbar" style="background-color: purple;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="font-weight: bold; color: white;">
+        <img src="{{ url_for('static', filename='10.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        EaseHeaven : Admin's Dashboard
+      </a>
+      <a href="/login_pg1" class="btn btn-light ml-auto">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">Customers Management</h5>
+            <a href="/cust_mnt" class="btn btn-primary">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card" style="width: 105%;">
+          <div class="card-body">
+            <h5 class="card-title">Service Professionals Management</h5>
+            <a href="/sp_mnt" class="btn btn-primary">Click Here</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 100%; margin-left:20px;">
+          <div class="card-body">
+            <h5 class="card-title">Service Management</h5>
+            <a href="/service" class="btn btn-primary">Click Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

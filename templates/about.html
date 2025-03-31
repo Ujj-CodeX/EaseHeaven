@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    	<title>EaseHaven</title>
+      <link rel="icon" type="image/png" href="{{ url_for('static', filename='10.png') }}">
+    	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="background-color: purple;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:whitesmoke; font-weight: bold;">
+      <img src="{{url_for('static',filename='10.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      EaseHaven  </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" style="color:whitesmoke;" href="/">Home</a>
+        </li>
+        </div>
+  </div>
+</nav>
+</head>
+<body>
+  <div class="card mb-3" style="max-width: 50%; margin-top: 20%; margin-left: 30%; margin-bottom: 20%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{url_for('static',filename='10.png')}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight:bold;">EaseHeaven</h5>
+        <p>ABOUT US</p>
+        <p class="card-text" style="font-size:20px;">EaseHaven is your trusted partner for reliable and professional household services, designed to make life simpler and stress-free. We provide a comprehensive range of solutions tailored to meet your everyday needs, including cleaning, repairs, maintenance, and more. Our team of skilled professionals is dedicated to delivering exceptional service with a focus on quality, safety, and customer satisfaction.
+
+At EaseHaven, we believe in creating a haven of comfort and convenience for every home. With seamless booking, transparent pricing, and a commitment to excellence, we ensure that our clients can focus on what truly matters—spending time with their loved ones. Let EaseHaven handle the rest, so you can experience peace of mind and a truly well-managed home.</p>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer class="simple-footer" style="margin-top: 120px;">
+  <p>&copy; 2024 EaseHeaven. All rights reserved.</p>
+  <p>Contact us: <a href="mailto:support@yourcompany.com">support@EaseHeaven.com</a> | +123 456 7890</p>
+</footer>
+
+<style>
+  .simple-footer {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Center text alignment */
+    padding: 20px; /* Adds space inside the footer */
+    font-size: 14px; /* Adjust font size */
+  }
+  
+  .simple-footer a {
+    color: #fff; /* White color for links */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .simple-footer a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
+</style>
+</body>
+</html>
