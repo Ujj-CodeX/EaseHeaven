@@ -315,14 +315,23 @@ def sp_dash():
         if 'accept' in request.form:
             cursor.execute(
                 '''
-                UPDATE Request SET Ser_st = ? , prfid=? WHERE Srid = ? ''', ( "Accepted",ID,srid))
+                UPDATE Request SET Ser_st = ? , pr_fid=? WHERE srid = ? ''', ( "Accepted",ID,srid))
             conn.commit()
 
         if 'reject' in request.form:
             cursor.execute(
                 '''
-                UPDATE Request SET Ser_st = ? , prfid=? WHERE Srid = ? ''', ("Rejected", ID, srid))
+                UPDATE Request SET Ser_st = ? , pr_fid=? WHERE sr_id = ? ''', ("Rejected", ID, srid))
             conn.commit()
+
+
+        if 'completed' in request.form:
+            cursor.execute(
+                '''
+                UPDATE Request SET ser_st = ? , pr_fid=? WHERE sr_id = ? ''', ("Completed", ID, srid))
+            conn.commit()
+
+        
 
 
         if 'close' in request.form:
